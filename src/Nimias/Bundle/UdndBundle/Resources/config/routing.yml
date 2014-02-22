@@ -5,3 +5,17 @@ udnd_homepage:
 UdndBundle_varta:
     resource: "@UdndBundle/Resources/config/routing/varta.yml"
     prefix:   /varta
+
+UdndBundle_oblast:
+    resource: "@UdndBundle/Resources/config/routing/oblast.yml"
+    prefix:   /oblast
+
+UdndBundle_rayon:
+    resource: "@UdndBundle/Resources/config/routing/rayon.yml"
+    prefix:   /rayon
+
+UdndBundle_misto:
+    resource: "@UdndBundle/Resources/config/routing/misto.yml"
+    prefix:   /misto
+
+

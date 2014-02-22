@@ -40,6 +40,11 @@ class Misto
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    private $id;
+
+    /**
+     * @var integer
+     */
     private $mistoId;
 
 
@@ -114,12 +119,22 @@ class Misto
     }
 
     /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Get mistoId
      *
      * @return integer 
      */
     public function getMistoId()
     {
-        return $this->mistoId;
+        return $this->id;
     }
 }

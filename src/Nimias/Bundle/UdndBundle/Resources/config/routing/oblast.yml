@@ -1,0 +1,10 @@
+oblast:
+    pattern:  /
+    defaults: { _controller: "UdndBundle:Oblast:index" }
+
+oblast_show:
+    pattern:  /{id}
+    defaults: { _controller: "UdndBundle:Oblast:show" }
+
+
+

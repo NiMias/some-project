@@ -33,6 +33,12 @@ class Rayon
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     */
     private $rayonId;
 
 
@@ -84,12 +90,22 @@ class Rayon
     }
 
     /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Get rayonId
      *
      * @return integer 
      */
     public function getRayonId()
     {
-        return $this->rayonId;
+        return $this->id;
     }
 }

@@ -26,6 +26,11 @@ class Oblast
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    private $id;
+
+    /**
+     * @var integer
+     */
     private $oblastId;
 
 
@@ -54,12 +59,22 @@ class Oblast
     }
 
     /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Get oblastId
      *
      * @return integer 
      */
     public function getOblastId()
     {
-        return $this->oblastId;
+        return $this->id;
     }
 }

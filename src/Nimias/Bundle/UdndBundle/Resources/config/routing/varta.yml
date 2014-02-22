@@ -3,7 +3,7 @@ varta:
     defaults: { _controller: "UdndBundle:Varta:index" }
 
 varta_show:
-    pattern:  /{id}/show
+    pattern:  /{id}
     defaults: { _controller: "UdndBundle:Varta:show" }
 
 varta_new:

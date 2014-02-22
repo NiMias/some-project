@@ -40,6 +40,12 @@ class Region
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     */
     private $regionId;
 
 
@@ -114,12 +120,22 @@ class Region
     }
 
     /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Get regionId
      *
      * @return integer 
      */
     public function getRegionId()
     {
-        return $this->regionId;
+        return $this->id;
     }
 }
