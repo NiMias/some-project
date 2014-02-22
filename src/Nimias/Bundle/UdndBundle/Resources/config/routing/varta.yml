@@ -3,7 +3,7 @@ varta:
     defaults: { _controller: "UdndBundle:Varta:index" }
 
 varta_new:
-    pattern:  /nova
+    pattern:  /dodaty
     defaults: { _controller: "UdndBundle:Varta:new" }
 
 varta_create:
