@@ -17,25 +17,31 @@ class VartaType extends AbstractType
         $builder
             ->add('description', null, array(
                 'attr' => array(
-                    'class' => 'tinymce'
+                    'class' => 'tinymce',
                 ),
+                'label' => 'Опис',
             ))
             ->add('coordinators', null, array(
                 'attr' => array(
                     'class' => 'tinymce'
                 ),
+                'label' => 'Координатори',
             ))
             ->add('social', null, array(
                 'attr' => array(
                     'class' => 'tinymce'
                 ),
+                'label' => 'Спільноти в соцмережах',
             ))
             ->add('badges', null, array(
                 'attr' => array(
                     'class' => 'tinymce'
                 ),
+                'label' => 'Опізнавальні знаки',
             ))
-            ->add('regionId')
+            ->add('regionId', null, array(
+                'label' => 'Регіон',
+            ))
         ;
     }
     
