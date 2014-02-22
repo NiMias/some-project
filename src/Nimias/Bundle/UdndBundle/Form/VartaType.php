@@ -20,9 +20,21 @@ class VartaType extends AbstractType
                     'class' => 'tinymce'
                 ),
             ))
-            ->add('coordinators')
-            ->add('social')
-            ->add('badges')
+            ->add('coordinators', null, array(
+                'attr' => array(
+                    'class' => 'tinymce'
+                ),
+            ))
+            ->add('social', null, array(
+                'attr' => array(
+                    'class' => 'tinymce'
+                ),
+            ))
+            ->add('badges', null, array(
+                'attr' => array(
+                    'class' => 'tinymce'
+                ),
+            ))
             ->add('regionId')
         ;
     }
