@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Nimias\Bundle\UdndBundle\Entity\Varta" table="varta">
+    <indexes>
+      <index name="region" columns="region_id"/>
+    </indexes>
+    <id name="vartaId" type="bigint" column="varta_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="description" type="text" column="description" nullable="true"/>
+    <field name="coordinators" type="text" column="coordinators" nullable="true"/>
+    <field name="social" type="text" column="social" nullable="true"/>
+    <field name="badges" type="text" column="badges" nullable="true"/>
+    <field name="regionId" type="integer" column="region_id" nullable="false"/>
+  </entity>
+</doctrine-mapping>

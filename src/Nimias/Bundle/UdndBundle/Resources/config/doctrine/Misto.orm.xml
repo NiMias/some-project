@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Nimias\Bundle\UdndBundle\Entity\Misto" table="misto">
+    <indexes>
+      <index name="oblast" columns="oblast_id"/>
+      <index name="rayon" columns="rayon_id"/>
+      <index name="name" columns="name"/>
+    </indexes>
+    <id name="mistoId" type="integer" column="misto_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="oblastId" type="integer" column="oblast_id" nullable="false"/>
+    <field name="rayonId" type="integer" column="rayon_id" nullable="true"/>
+    <field name="name" type="string" column="name" length="255" nullable="false"/>
+  </entity>
+</doctrine-mapping>

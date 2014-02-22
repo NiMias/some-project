@@ -1,0 +1,46 @@
+<?php
+
+namespace Nimias\Bundle\UdndBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Region
+ *
+ * @ORM\Table(name="region", indexes={@ORM\Index(name="district", columns={"district"}), @ORM\Index(name="microd", columns={"microdistrict"}), @ORM\Index(name="misto", columns={"misto_id"})})
+ * @ORM\Entity
+ */
+class Region
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="district", type="string", length=255, nullable=true)
+     */
+    private $district;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="microdistrict", type="string", length=255, nullable=true)
+     */
+    private $microdistrict;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="misto_id", type="integer", nullable=false)
+     */
+    private $mistoId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="region_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $regionId;
+
+
+}

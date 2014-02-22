@@ -1,0 +1,60 @@
+<?php
+
+namespace Nimias\Bundle\UdndBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Varta
+ *
+ * @ORM\Table(name="varta", indexes={@ORM\Index(name="region", columns={"region_id"})})
+ * @ORM\Entity
+ */
+class Varta
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=true)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="coordinators", type="text", nullable=true)
+     */
+    private $coordinators;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="social", type="text", nullable=true)
+     */
+    private $social;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="badges", type="text", nullable=true)
+     */
+    private $badges;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="region_id", type="integer", nullable=false)
+     */
+    private $regionId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="varta_id", type="bigint")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $vartaId;
+
+
+}
