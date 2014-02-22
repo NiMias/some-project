@@ -1,0 +1,30 @@
+varta:
+    pattern:  /
+    defaults: { _controller: "UdndBundle:Varta:index" }
+
+varta_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "UdndBundle:Varta:show" }
+
+varta_new:
+    pattern:  /new
+    defaults: { _controller: "UdndBundle:Varta:new" }
+
+varta_create:
+    pattern:  /create
+    defaults: { _controller: "UdndBundle:Varta:create" }
+    requirements: { _method: post }
+
+varta_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "UdndBundle:Varta:edit" }
+
+varta_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "UdndBundle:Varta:update" }
+    requirements: { _method: post|put }
+
+varta_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "UdndBundle:Varta:delete" }
+    requirements: { _method: post|delete }

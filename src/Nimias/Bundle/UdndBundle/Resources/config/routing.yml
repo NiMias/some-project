@@ -2,3 +2,6 @@ udnd_homepage:
     pattern:  /
     defaults: { _controller: UdndBundle:Home:index }
 
+UdndBundle_varta:
+    resource: "@UdndBundle/Resources/config/routing/varta.yml"
+    prefix:   /varta

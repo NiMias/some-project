@@ -56,6 +56,11 @@ class Varta
      */
     private $id;
 
+    /**
+     * @var integer
+     */
+    private $vartaId;
+
 
 
     /**
@@ -180,7 +185,7 @@ class Varta
      */
     public function getVartaId()
     {
-        return $this->getId();
+        return $this->id;
     }
     
     /**
