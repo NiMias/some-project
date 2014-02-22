@@ -1,0 +1,4 @@
+udnd:
+    resource: "@UdndBundle/Resources/config/routing.yml"
+    prefix:   /
+

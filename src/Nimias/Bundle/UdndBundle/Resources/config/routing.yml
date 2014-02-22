@@ -1,0 +1,3 @@
+udnd_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: UdndBundle:Default:index }
