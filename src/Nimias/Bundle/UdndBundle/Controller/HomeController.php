@@ -4,10 +4,10 @@ namespace Nimias\Bundle\UdndBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class DefaultController extends Controller
+class HomeController extends Controller
 {
     public function indexAction($name)
     {
-        return $this->render('UdndBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('UdndBundle:Home:index.html.twig', array('name' => $name));
     }
 }

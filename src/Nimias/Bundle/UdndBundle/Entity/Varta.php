@@ -54,7 +54,7 @@ class Varta
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $vartaId;
+    private $id;
 
 
 
@@ -180,6 +180,16 @@ class Varta
      */
     public function getVartaId()
     {
-        return $this->vartaId;
+        return $this->getId();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }
