@@ -3,25 +3,25 @@ varta:
     defaults: { _controller: "UdndBundle:Varta:index" }
 
 varta_new:
-    pattern:  /new
+    pattern:  /nova
     defaults: { _controller: "UdndBundle:Varta:new" }
 
 varta_create:
-    pattern:  /create
+    pattern:  /stvoryty
     defaults: { _controller: "UdndBundle:Varta:create" }
     requirements: { _method: post }
 
 varta_edit:
-    pattern:  /{id}/edit
+    pattern:  /{id}/pravka
     defaults: { _controller: "UdndBundle:Varta:edit" }
 
 varta_update:
-    pattern:  /{id}/update
+    pattern:  /{id}/obnovyty
     defaults: { _controller: "UdndBundle:Varta:update" }
     requirements: { _method: post|put }
 
 varta_delete:
-    pattern:  /{id}/delete
+    pattern:  /{id}/vydalyty
     defaults: { _controller: "UdndBundle:Varta:delete" }
     requirements: { _method: post|delete }
 
