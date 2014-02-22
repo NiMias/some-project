@@ -1,7 +1,3 @@
-misto:
-    pattern:  /
-    defaults: { _controller: "UdndBundle:Misto:index" }
-
 misto_show:
     pattern:  /{id}
     defaults: { _controller: "UdndBundle:Misto:show" }

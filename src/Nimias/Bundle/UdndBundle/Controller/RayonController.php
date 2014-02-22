@@ -13,22 +13,6 @@ use Nimias\Bundle\UdndBundle\Entity\Rayon;
  */
 class RayonController extends Controller
 {
-
-    /**
-     * Lists all Rayon entities.
-     *
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('UdndBundle:Rayon')->findAll();
-
-        return $this->render('UdndBundle:Rayon:index.html.twig', array(
-            'entities' => $entities,
-        ));
-    }
-
     /**
      * Finds and displays a Rayon entity.
      *

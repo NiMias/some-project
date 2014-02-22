@@ -2,10 +2,6 @@ varta:
     pattern:  /
     defaults: { _controller: "UdndBundle:Varta:index" }
 
-varta_show:
-    pattern:  /{id}
-    defaults: { _controller: "UdndBundle:Varta:show" }
-
 varta_new:
     pattern:  /new
     defaults: { _controller: "UdndBundle:Varta:new" }
@@ -28,3 +24,8 @@ varta_delete:
     pattern:  /{id}/delete
     defaults: { _controller: "UdndBundle:Varta:delete" }
     requirements: { _method: post|delete }
+
+varta_show:
+    pattern:  /{id}
+    defaults: { _controller: "UdndBundle:Varta:show" }
+

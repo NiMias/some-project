@@ -13,22 +13,6 @@ use Nimias\Bundle\UdndBundle\Entity\Misto;
  */
 class MistoController extends Controller
 {
-
-    /**
-     * Lists all Misto entities.
-     *
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('UdndBundle:Misto')->findAll();
-
-        return $this->render('UdndBundle:Misto:index.html.twig', array(
-            'entities' => $entities,
-        ));
-    }
-
     /**
      * Finds and displays a Misto entity.
      *

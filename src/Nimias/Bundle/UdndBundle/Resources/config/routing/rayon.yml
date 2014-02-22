@@ -1,7 +1,3 @@
-rayon:
-    pattern:  /
-    defaults: { _controller: "UdndBundle:Rayon:index" }
-
 rayon_show:
     pattern:  /{id}
     defaults: { _controller: "UdndBundle:Rayon:show" }
