@@ -15,13 +15,6 @@ class Misto
     /**
      * @var integer
      *
-     * @ORM\Column(name="oblast_id", type="integer", nullable=false)
-     */
-    private $oblastId;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="rayon_id", type="integer", nullable=true)
      */
     private $rayonId;
@@ -48,29 +41,6 @@ class Misto
     private $mistoId;
 
 
-
-    /**
-     * Set oblastId
-     *
-     * @param integer $oblastId
-     * @return Misto
-     */
-    public function setOblastId($oblastId)
-    {
-        $this->oblastId = $oblastId;
-
-        return $this;
-    }
-
-    /**
-     * Get oblastId
-     *
-     * @return integer 
-     */
-    public function getOblastId()
-    {
-        return $this->oblastId;
-    }
 
     /**
      * Set rayonId

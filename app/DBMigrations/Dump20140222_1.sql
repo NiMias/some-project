@@ -26,11 +26,9 @@ DROP TABLE IF EXISTS `misto`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `misto` (
   `misto_id` int(11) NOT NULL AUTO_INCREMENT,
-  `oblast_id` int(11) NOT NULL,
   `rayon_id` int(11) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`misto_id`),
-  KEY `oblast` (`oblast_id`),
   KEY `rayon` (`rayon_id`),
   KEY `name` (`name`(30))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
