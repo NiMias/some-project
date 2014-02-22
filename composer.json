@@ -37,6 +37,7 @@
         "knplabs/knp-menu-bundle":"dev-master@dev",
         "braincrafted/bootstrap-bundle": "~2.0@alpha",
         "twbs/bootstrap": "3.0.*",
+        "stfalcon/tinymce-bundle": "dev-master",
         "jquery/jquery":  "1.10.*"
     },
     "scripts": {
