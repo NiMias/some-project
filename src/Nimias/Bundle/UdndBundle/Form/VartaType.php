@@ -15,7 +15,11 @@ class VartaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('description')
+            ->add('description', null, array(
+                'attr' => array(
+                    'class' => 'tinymce'
+                ),
+            ))
             ->add('coordinators')
             ->add('social')
             ->add('badges')
