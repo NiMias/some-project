@@ -34,8 +34,6 @@
         "sensio/framework-extra-bundle": "~3.0",
         "sensio/generator-bundle": "~2.3",
         "incenteev/composer-parameter-handler": "~2.0",
-        "knplabs/knp-menu": "2.0.*@dev",
-        "knplabs/knp-menu-bundle":"dev-master@dev",
         "braincrafted/bootstrap-bundle": "~2.0@alpha",
         "twbs/bootstrap": "3.0.*",
         "stfalcon/tinymce-bundle": "dev-master",
