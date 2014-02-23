@@ -62,13 +62,6 @@ braincrafted_bootstrap:
         bootstrap_output: %kernel.root_dir%/Resources/less/bootstrap.less
         bootstrap_template: BraincraftedBootstrapBundle:Bootstrap:bootstrap.less.twig
 
-# app/config/config.yml
-knp_menu:
-    twig:  # use "twig: false" to disable the Twig extension and the TwigRenderer
-        template: knp_menu.html.twig
-    templating: false # if true, enables the helper for PHP templates
-    default_renderer: twig # The renderer to use, list is also available by default
-
 # Doctrine Configuration
 doctrine:
     dbal:
