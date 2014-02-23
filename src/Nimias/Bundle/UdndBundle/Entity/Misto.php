@@ -3,6 +3,7 @@
 namespace Nimias\Bundle\UdndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Misto
@@ -40,7 +41,21 @@ class Misto
      */
     private $mistoId;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Rayon", inversedBy="mista")
+     * @ORM\JoinColumn(name="rayon_id", referencedColumnName="rayon_id")
+     */
+    protected $rayon;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Region", mappedBy="misto")
+     */
+    protected $regiony;
+    
+    public function __construct()
+    {
+        $this->regiony = new ArrayCollection();
+    }
 
     /**
      * Set rayonId
@@ -106,5 +121,61 @@ class Misto
     public function getMistoId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set rayon
+     *
+     * @param \Nimias\Bundle\UdndBundle\Entity\Rayon $rayon
+     * @return Misto
+     */
+    public function setRayon(\Nimias\Bundle\UdndBundle\Entity\Rayon $rayon = null)
+    {
+        $this->rayon = $rayon;
+
+        return $this;
+    }
+
+    /**
+     * Get rayon
+     *
+     * @return \Nimias\Bundle\UdndBundle\Entity\Rayon 
+     */
+    public function getRayon()
+    {
+        return $this->rayon;
+    }
+
+    /**
+     * Add regiony
+     *
+     * @param \Nimias\Bundle\UdndBundle\Entity\Region $regiony
+     * @return Misto
+     */
+    public function addRegiony(\Nimias\Bundle\UdndBundle\Entity\Region $regiony)
+    {
+        $this->regiony[] = $regiony;
+
+        return $this;
+    }
+
+    /**
+     * Remove regiony
+     *
+     * @param \Nimias\Bundle\UdndBundle\Entity\Region $regiony
+     */
+    public function removeRegiony(\Nimias\Bundle\UdndBundle\Entity\Region $regiony)
+    {
+        $this->regiony->removeElement($regiony);
+    }
+
+    /**
+     * Get regiony
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRegiony()
+    {
+        return $this->regiony;
     }
 }

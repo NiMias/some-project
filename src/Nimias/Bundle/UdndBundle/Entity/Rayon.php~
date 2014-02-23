@@ -3,6 +3,7 @@
 namespace Nimias\Bundle\UdndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Rayon
@@ -33,7 +34,94 @@ class Rayon
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     */
     private $rayonId;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Oblast", inversedBy="rayony")
+     * @ORM\JoinColumn(name="oblast_id", referencedColumnName="oblast_id")
+     */
+    protected $oblast;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Misto", mappedBy="rayon")
+     */
+    protected $mista;
+    
+    public function __construct()
+    {
+        $this->mista = new ArrayCollection();
+    }
+
+
+    /**
+     * Set oblastId
+     *
+     * @param integer $oblastId
+     * @return Rayon
+     */
+    public function setOblastId($oblastId)
+    {
+        $this->oblastId = $oblastId;
+
+        return $this;
+    }
+
+    /**
+     * Get oblastId
+     *
+     * @return integer 
+     */
+    public function getOblastId()
+    {
+        return $this->oblastId;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Rayon
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get rayonId
+     *
+     * @return integer 
+     */
+    public function getRayonId()
+    {
+        return $this->id;
+    }
 }

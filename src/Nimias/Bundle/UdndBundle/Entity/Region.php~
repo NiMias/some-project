@@ -3,6 +3,7 @@
 namespace Nimias\Bundle\UdndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Region
@@ -40,7 +41,117 @@ class Region
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     */
     private $regionId;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Misto", inversedBy="regiony")
+     * @ORM\JoinColumn(name="misto_id", referencedColumnName="misto_id")
+     */
+    protected $misto;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Varta", mappedBy="region")
+     */
+    protected $varty;
+    
+    public function __construct()
+    {
+        $this->varty = new ArrayCollection();
+    }
 
 
+    /**
+     * Set district
+     *
+     * @param string $district
+     * @return Region
+     */
+    public function setDistrict($district)
+    {
+        $this->district = $district;
+
+        return $this;
+    }
+
+    /**
+     * Get district
+     *
+     * @return string 
+     */
+    public function getDistrict()
+    {
+        return $this->district;
+    }
+
+    /**
+     * Set microdistrict
+     *
+     * @param string $microdistrict
+     * @return Region
+     */
+    public function setMicrodistrict($microdistrict)
+    {
+        $this->microdistrict = $microdistrict;
+
+        return $this;
+    }
+
+    /**
+     * Get microdistrict
+     *
+     * @return string 
+     */
+    public function getMicrodistrict()
+    {
+        return $this->microdistrict;
+    }
+
+    /**
+     * Set mistoId
+     *
+     * @param integer $mistoId
+     * @return Region
+     */
+    public function setMistoId($mistoId)
+    {
+        $this->mistoId = $mistoId;
+
+        return $this;
+    }
+
+    /**
+     * Get mistoId
+     *
+     * @return integer 
+     */
+    public function getMistoId()
+    {
+        return $this->mistoId;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get regionId
+     *
+     * @return integer 
+     */
+    public function getRegionId()
+    {
+        return $this->id;
+    }
 }

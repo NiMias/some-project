@@ -3,6 +3,7 @@
 namespace Nimias\Bundle\UdndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Nimias\Bundle\UdndBundle\Entity\Region;
 
 /**
  * Varta
@@ -60,8 +61,13 @@ class Varta
      * @var integer
      */
     private $vartaId;
-
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Region", inversedBy="varty")
+     * @ORM\JoinColumn(name="region_id", referencedColumnName="region_id")
+     */
+    protected $region;
+    
 
     /**
      * Set description
@@ -196,5 +202,28 @@ class Varta
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set region
+     *
+     * @param \Nimias\Bundle\UdndBundle\Entity\Region $region
+     * @return Varta
+     */
+    public function setRegion(\Nimias\Bundle\UdndBundle\Entity\Region $region = null)
+    {
+        $this->region = $region;
+
+        return $this;
+    }
+
+    /**
+     * Get region
+     *
+     * @return \Nimias\Bundle\UdndBundle\Entity\Region 
+     */
+    public function getRegion()
+    {
+        return $this->region;
     }
 }

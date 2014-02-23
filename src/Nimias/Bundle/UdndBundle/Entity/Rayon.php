@@ -3,6 +3,7 @@
 namespace Nimias\Bundle\UdndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Rayon
@@ -41,6 +42,21 @@ class Rayon
      */
     private $rayonId;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Oblast", inversedBy="rayony")
+     * @ORM\JoinColumn(name="oblast_id", referencedColumnName="oblast_id")
+     */
+    protected $oblast;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Misto", mappedBy="rayon")
+     */
+    protected $mista;
+    
+    public function __construct()
+    {
+        $this->mista = new ArrayCollection();
+    }
 
 
     /**
@@ -107,5 +123,61 @@ class Rayon
     public function getRayonId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set oblast
+     *
+     * @param \Nimias\Bundle\UdndBundle\Entity\Oblast $oblast
+     * @return Rayon
+     */
+    public function setOblast(\Nimias\Bundle\UdndBundle\Entity\Oblast $oblast = null)
+    {
+        $this->oblast = $oblast;
+
+        return $this;
+    }
+
+    /**
+     * Get oblast
+     *
+     * @return \Nimias\Bundle\UdndBundle\Entity\Oblast 
+     */
+    public function getOblast()
+    {
+        return $this->oblast;
+    }
+
+    /**
+     * Add mista
+     *
+     * @param \Nimias\Bundle\UdndBundle\Entity\Misto $mista
+     * @return Rayon
+     */
+    public function addMistum(\Nimias\Bundle\UdndBundle\Entity\Misto $mista)
+    {
+        $this->mista[] = $mista;
+
+        return $this;
+    }
+
+    /**
+     * Remove mista
+     *
+     * @param \Nimias\Bundle\UdndBundle\Entity\Misto $mista
+     */
+    public function removeMistum(\Nimias\Bundle\UdndBundle\Entity\Misto $mista)
+    {
+        $this->mista->removeElement($mista);
+    }
+
+    /**
+     * Get mista
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMista()
+    {
+        return $this->mista;
     }
 }

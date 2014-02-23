@@ -3,6 +3,7 @@
 namespace Nimias\Bundle\UdndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Oblast
@@ -26,7 +27,64 @@ class Oblast
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    private $id;
+
+    /**
+     * @var integer
+     */
     private $oblastId;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Rayon", mappedBy="oblast")
+     */
+    protected $rayony;
+    
+    public function __construct()
+    {
+        $this->rayony = new ArrayCollection();
+    }
 
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Oblast
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get oblastId
+     *
+     * @return integer 
+     */
+    public function getOblastId()
+    {
+        return $this->id;
+    }
 }

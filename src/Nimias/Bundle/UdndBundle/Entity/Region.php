@@ -3,6 +3,7 @@
 namespace Nimias\Bundle\UdndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Region
@@ -47,7 +48,22 @@ class Region
      *
      */
     private $regionId;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Misto", inversedBy="regiony")
+     * @ORM\JoinColumn(name="misto_id", referencedColumnName="misto_id")
+     */
+    protected $misto;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Varta", mappedBy="region")
+     */
+    protected $varty;
+    
+    public function __construct()
+    {
+        $this->varty = new ArrayCollection();
+    }
 
 
     /**
@@ -137,5 +153,61 @@ class Region
     public function getRegionId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set misto
+     *
+     * @param \Nimias\Bundle\UdndBundle\Entity\Misto $misto
+     * @return Region
+     */
+    public function setMisto(\Nimias\Bundle\UdndBundle\Entity\Misto $misto = null)
+    {
+        $this->misto = $misto;
+
+        return $this;
+    }
+
+    /**
+     * Get misto
+     *
+     * @return \Nimias\Bundle\UdndBundle\Entity\Misto 
+     */
+    public function getMisto()
+    {
+        return $this->misto;
+    }
+
+    /**
+     * Add varty
+     *
+     * @param \Nimias\Bundle\UdndBundle\Entity\Varta $varty
+     * @return Region
+     */
+    public function addVarty(\Nimias\Bundle\UdndBundle\Entity\Varta $varty)
+    {
+        $this->varty[] = $varty;
+
+        return $this;
+    }
+
+    /**
+     * Remove varty
+     *
+     * @param \Nimias\Bundle\UdndBundle\Entity\Varta $varty
+     */
+    public function removeVarty(\Nimias\Bundle\UdndBundle\Entity\Varta $varty)
+    {
+        $this->varty->removeElement($varty);
+    }
+
+    /**
+     * Get varty
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getVarty()
+    {
+        return $this->varty;
     }
 }

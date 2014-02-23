@@ -3,6 +3,7 @@
 namespace Nimias\Bundle\UdndBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Misto
@@ -12,13 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Misto
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="oblast_id", type="integer", nullable=false)
-     */
-    private $oblastId;
-
     /**
      * @var integer
      *
@@ -40,7 +34,92 @@ class Misto
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
+    private $id;
+
+    /**
+     * @var integer
+     */
     private $mistoId;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Rayon", inversedBy="mista")
+     * @ORM\JoinColumn(name="rayon_id", referencedColumnName="rayon_id")
+     */
+    protected $rayon;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Region", mappedBy="misto")
+     */
+    protected $regiony;
+    
+    public function __construct()
+    {
+        $this->regiony = new ArrayCollection();
+    }
+
+    /**
+     * Set rayonId
+     *
+     * @param integer $rayonId
+     * @return Misto
+     */
+    public function setRayonId($rayonId)
+    {
+        $this->rayonId = $rayonId;
+
+        return $this;
+    }
+
+    /**
+     * Get rayonId
+     *
+     * @return integer 
+     */
+    public function getRayonId()
+    {
+        return $this->rayonId;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Misto
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get mistoId
+     *
+     * @return integer 
+     */
+    public function getMistoId()
+    {
+        return $this->id;
+    }
 }
