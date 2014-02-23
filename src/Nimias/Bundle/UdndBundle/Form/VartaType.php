@@ -15,33 +15,12 @@ class VartaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('description', null, array(
-                'attr' => array(
-                    'class' => 'tinymce',
-                ),
-                'label' => 'Опис',
-            ))
-            ->add('coordinators', null, array(
-                'attr' => array(
-                    'class' => 'tinymce'
-                ),
-                'label' => 'Координатори',
-            ))
-            ->add('social', null, array(
-                'attr' => array(
-                    'class' => 'tinymce'
-                ),
-                'label' => 'Спільноти в соцмережах',
-            ))
-            ->add('badges', null, array(
-                'attr' => array(
-                    'class' => 'tinymce'
-                ),
-                'label' => 'Опізнавальні знаки',
-            ))
-            ->add('regionId', null, array(
-                'label' => 'Регіон',
-            ))
+            ->add('description')
+            ->add('coordinators')
+            ->add('social')
+            ->add('badges')
+            ->add('regionId')
+            ->add('region')
         ;
     }
     

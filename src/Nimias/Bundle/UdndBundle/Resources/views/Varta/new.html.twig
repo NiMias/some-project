@@ -1,10 +1,10 @@
-{% extends 'UdndBundle::layout.html.twig' %}
+{% extends '::base.html.twig' %}
 
 {% block body -%}
     <h1>Varta creation</h1>
 
     {{ form(form) }}
-    {{ tinymce_init() }}
+
         <ul class="record_actions">
     <li>
         <a href="{{ path('varta') }}">
