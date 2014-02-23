@@ -10,7 +10,7 @@ class RegionType extends AbstractType {
     
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add()
+        $builder->add();
     }
     
     public function getName()
