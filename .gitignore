@@ -4,6 +4,7 @@
 /app/config/parameters.yml
 /app/logs/*
 /vendor/
+/composer.lock
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 /build/
